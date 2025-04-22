@@ -1,0 +1,225 @@
+/* Se utiliza para importar la fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Se declara las variables para utilizar posteriormente y en el codigo se usa "var + nombre de variable"*/
+:root{
+    --color-primario: #FFC2D1; 
+    --color-secundario: #000000; 
+    --color-terciario: #EF476F; 
+    --color-cuaternario: #494b32;
+   
+    --fuente-montserrat: 'Montserrat', sans-serif;
+    --fuente-krona: 'Krona One', sans-serif;
+}
+
+/* "RESET CSS" Se utiliza * para determinar que es un cambio universal en todos los elementos de html*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /* height: 100vh;  (Se utiliza 100% de la altura de la ventana del navegador, se elimina cuando se agrega un footer) */
+    box-sizing: border-box; /* Se utiliza para que el padding y el margin no afecten el tamaño del elemento */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Se utiliza punto para determinar que es una clase */
+.header{
+   padding: 2% 0% 0% 15%; 
+}
+
+.header__menu__titulo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+}
+
+.presentacion {
+    display: flex; 
+    align-items: center; 
+    padding: 5% 5%; 
+    justify-content: center; /* Se utiliza para centrar el contenido horizontalmente */
+    flex-direction: row; /* Se utiliza para que el contenido se vea en una sola fila */
+    gap:32px;
+    font-size: 1.5rem; /* Se utiliza para que el tamaño de la fuente sea grande */
+}
+
+.presentacion__contenido{
+    max-width: 1000%; /* Se utiliza para que el contenido no se vea tan grande */
+    display: flex; /* Se utiliza para que el contenido se vea en una sola columna */
+    align-items: center; /* Se utiliza para centrar el contenido verticalmente */
+    flex-direction: column; /* Se utiliza para que el contenido se vea en una sola columna */
+    justify-content: center; /* Se utiliza para centrar el contenido verticalmente */
+    gap: 50px; /* Se utiliza para separar los elementos del contenido */ 
+    margin:auto;
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2rem; /* Se utiliza para que el tamaño de la fuente sea grande */
+    font-family: var(--fuente-krona);
+    color: var(--color-secundario);
+    text-align: center;
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__imagen{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer{
+    width: 100%;
+    background-color: var(--color-terciario);
+    color: var(--color-primario);
+    text-align: center; /* Se utiliza para centrar el texto del footer */
+    padding: 1rem 0; /* Se utiliza para separar el contenido del footer del resto de la pagina */
+    font-family: var(--fuente-krona);
+    font-size: 1rem;
+    font-weight:500;
+}
+
+.footer__enlaces{
+    display:flex;
+    justify-content: space-between;
+    flex-direction:column; /* Se utiliza para que los enlaces se vean en una sola columna */
+    align-items: center; /* Se utiliza para centrar el contenido verticalmente */
+    gap: 10px;
+    
+}
+
+/*Galeria - para poder poner imagenes de rejilla de 2 por fila*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .item {
+    text-align: center;
+  }
+  
+  .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .item img:hover {
+    transform: scale(1.05);
+  }
+  
+  .item p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    font-family: var(--fuente-krona);
+  }
+  
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  .lightbox.visible {
+    display: flex;
+  }
+  
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  .lightbox p {
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+
+/* Se utiliza @media queries para la propiedad de que sea responsiva al comportamiento para cambiar a mobile*/
+    @media (max-width: 600px){
+       
+        .header{
+            padding:10%;
+        }
+
+        .header__menu{
+            justify-content: center;
+        }
+
+        .header__menu__titulo {
+            font-size: 2rem;
+        }
+
+        .presentacion{
+            flex-direction: column;
+            padding: 5%;            
+        }
+
+        .presentacion__contenido{
+            width: auto;
+        }
+
+        .galeria-imagenes {
+            font: 1em sans-serif;
+            align-items: center;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        .presentacion__imagen {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .presentacion__imagen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px; /* Opcional: bordes redondeados */
+            width: 200%;
+        }
+
+
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="./styles/style.css"> <!--se utiliza la ruta cuando se trabajan con mas de un archivo HTML-->
+</head>
+
+<body>
+    <header class="header">
+            <p class="header__menu__titulo">Tejiendo Recuerdos <img src="./assets/tejer2.webp" alt="Logo de la pagina" width="200">
+            </p>
+    </header>
+
+    <main class="presentacion">
+        <section class="presentacion__contenido">
+            <div class="presentacion__contenido__titulo">
+                Cojines artesanales hechos con amor y dedicación utilizando materiales de alta calidad
+                    que reflejan dedicación en cada puntada </div>
+
+                <p class="presentacion__contenido__texto"> Más que simples accesorios, son piezas llenas de 
+                    historia, ideales para regalar o dar un toque especial a cualquier rincón de tu hogar. 
+                    Con cada compra apoyas el trabajo hecho a mano y la pasión por el arte textil.
+                    Déjate envolver por la suavidad, el detalle y la emoción de lo hecho con el corazón.
+                    Explora nuestra colección y encuentra ese cojín que hace de tu rincon especial algo inolvidable.
+                </p>
+    </main>
+
+    <div class="galeria" id="galeria"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+    <span class="cerrar">&times;</span>
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+    <p id="lightbox-caption"></p>
+    </div>
+
+    <script src="galeria.js"></script>
+
+    
+    <footer class="footer">
+        <nav class="footer__enlaces">
+            <h2 class="footer__enlaces__subtitulos"> Dudas o comentarios, accede a mis redes</h2>    
+
+        <section>
+            <a class="footer__redes" href="https://www.facebook.com/profile.php?id=61574719787966" target="_blank"><img src="./assets/facebook.png" alt="Facebook"></a>
+        </section>    
+    </footer>
+
+</body>
+</html>
